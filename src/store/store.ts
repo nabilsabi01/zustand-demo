@@ -17,6 +17,7 @@ type State = {
   decrement: () => void
   addTodo: (text: string) => void
   toggleTodo: (id: string) => void
+  removeTodo: (id: string) => void
   toggleTheme: () => void
 }
 
@@ -28,31 +29,32 @@ export const useStore = create<State>()(
         todos: [],
         theme: 'light' as const,
 
-        increment: () => set((state) => { state.count += 1 }),
-        decrement: () => set((state) => { state.count -= 1 }),
+        increment: () => set((s) => { s.count += 1 }),
+        decrement: () => set((s) => { s.count -= 1 }),
 
         addTodo: (text) =>
-          set((state) => {
-            state.todos.push({
-              id: crypto.randomUUID(),
-              text,
-              done: false
-            })
+          set((s) => {
+            s.todos.push({ id: crypto.randomUUID(), text, done: false })
           }),
 
         toggleTodo: (id) =>
-          set((state) => {
-            const todo = state.todos.find(t => t.id === id)
+          set((s) => {
+            const todo = s.todos.find((t) => t.id === id)
             if (todo) todo.done = !todo.done
           }),
 
+        removeTodo: (id) =>
+          set((s) => {
+            s.todos = s.todos.filter((t) => t.id !== id)
+          }),
+
         toggleTheme: () =>
-          set((state) => ({
-            theme: state.theme === 'light' ? 'dark' : 'light'
-          }))
+          set((s) => ({
+            theme: s.theme === 'light' ? 'dark' : 'light'
+          })),
       })),
       { name: 'zustand-demo' }
     ),
-    { name: 'Demo Store' }
+    { name: 'Zustand Demo Store' }
   )
 )

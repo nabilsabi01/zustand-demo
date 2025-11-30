@@ -1,17 +1,18 @@
-# Zustand + Shadcn/UI + Tailwind v4 Demo
+# Zustand Demo
 
-Modern React 19 + TypeScript + Vite + Tailwind CSS v4 + shadcn/ui setup (2025)
+Modern React 19.2.0 + Zustand + shadcn/ui + Tailwind v4
 
-## Stack
+## Features
+- React 19.2.0 (`useEffectEvent`, `useOptimistic`, `<Activity>`)
+- Zustand 5.0.9 + Immer + persist + devtools
+- Optimistic UI + Full localStorage persistence
+- Dark mode + Delete todo + Animations
+- React Compiler enabled (zero manual memo)
+
+## Tech Stack
 - React 19.2.0
 - Vite 7.2.4
 - TypeScript 5.9
-- Tailwind CSS v4 (native Vite plugin)
+- Zustand 5.0.9
+- Tailwind CSS v4
 - shadcn/ui v3.5.1
-- tailwindcss-animate
-
-## Scripts
-```bash
-npm run dev     # Start dev server
-npm run build   # Production build
-npm run preview # Preview build
