@@ -2,8 +2,7 @@
 
 Modern React 19.2.0 + Zustand + shadcn/ui + Tailwind v4
 
-**Live Demo**: https://zustand-demo-ruby.vercel.app
-
+**Live Demo**: https://zustand-demo-practices.vercel.app/
 ## Features
 - React 19.2.0 + TypeScript 5.9 + Vite 7.2.4
 - Zustand 5.0.9 + Immer + persist + devtools
