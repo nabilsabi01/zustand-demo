@@ -2,13 +2,13 @@ import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
 import { immer } from 'zustand/middleware/immer'
 
-type Todo = {
+interface Todo {
   id: string
   text: string
   done: boolean
 }
 
-type State = {
+interface State {
   count: number
   todos: Todo[]
   theme: 'light' | 'dark'
